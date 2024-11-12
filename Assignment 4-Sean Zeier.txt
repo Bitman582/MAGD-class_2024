@@ -1,0 +1,78 @@
+﻿function setup() {
+  createCanvas(600, 500);
+
+
+function mouseClick() {
+ if(mouseX <300){ frameRate(100)  }
+ if(mouseX>300){frameRate(25)}
+}}
+
+
+function draw() {
+  background(220);
+
+
+  fill(0,200,55); 
+  
+let b=500; let y=250; let fc=frameCount; my=mouseY;
+  
+colorMode(RGB, 255,255,255,1);
+  
+noStroke(); 
+
+
+fill(0,200,55); 
+
+
+  for (let b = 12; b < 600; b += 50) {
+  rect(b, 0, 25, 25);
+}
+
+
+fill(150,0,150);  
+    
+  for (let b = 20; b< 600; b += 50) {
+  rect(b, 475, 25, 25);
+  }
+
+
+//bottom spikes
+fill(0,0,0,0.7);
+   for (let b = 0; b< 600; b += 200) {
+  triangle(b+fc,500,b+15+fc ,285,b+30+fc ,500);
+  }
+
+
+//top spikes
+fill(0,0,0,0.7);
+   for (let b = 60; b< 600; b += 200) {
+  triangle(b+fc,0,b+20+fc ,230,b+40+fc ,0);
+  }   
+
+
+//projectiles  
+fill(245,255,0,0.7);
+   for (let b = 50; b< 600; b += 200) {
+  ellipse(b,0+fc,6,15);
+  }   
+
+
+strokeWeight(3); 
+  noStroke();
+    
+fill(200,0,50);
+ 
+ if (keyIsPressed) {
+
+
+//movement 
+  if (key =='w'){y=my}
+
+
+//forcefield
+  else if (key =='d') {stroke(40,90,250,0.6); fill(0,255,255);}
+ }
+  ellipse(b,y,65,65);
+
+
+}

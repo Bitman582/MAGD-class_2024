@@ -1,0 +1,57 @@
+﻿var x = []; var y = []; var w = []; var z = []; 
+
+
+function setup() {
+  createCanvas(600, 600);
+//defining arrays for background
+  for(var i=0; i<7000; i++){
+    x[i]=random(-1000,600);
+    y[i]=random(0,1600);
+  }
+//defining arrays for interaction
+  for(var f=0;f<23; f++){
+  w[f]=random(mouseX-50,mouseX+50);
+  z[f]=random(mouseY-50,mouseY+50)
+  }
+}
+
+
+function draw() {
+  background(0);
+  colorMode(RGB,255,255,255,1);
+
+
+for(var i=0; i<x.length; i++){
+  x[i]+=3;
+  y[i]-=1;
+ // a is y position of arc 
+  var a=i*0.6;
+  // b is y position of circle
+  var b=i*0.6;
+ // c is the candy diameter
+  var c=random(4,15);
+strokeWeight(1.5);stroke(255,255,0); fill(176,220,31);
+  
+  circle(y[i],b,c)
+
+
+strokeWeight(5);stroke(229,128,82);fill(219,54,25); 
+  
+  arc(x[i],a,20,20,0,PI)
+}
+  
+print(x.length)
+//spell around cursor
+for(var f=0;f<23; f++){
+  
+ w[f]=random(mouseX-50,mouseX+50);
+  z[f]=random(mouseY-50,mouseY+50);
+strokeWeight(0.75);stroke(169,47,225);fill(139,26,220); 
+//d is diameter of circle  
+  var d=random(4,25)
+
+
+  circle(w[f],z[f],d)}
+
+
+}
