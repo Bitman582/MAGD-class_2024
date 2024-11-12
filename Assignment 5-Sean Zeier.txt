@@ -1,0 +1,132 @@
+﻿function setup() {
+  createCanvas(600,400);
+
+
+
+
+
+
+}
+
+
+function draw() {
+let mx=mouseX;let my=mouseY;
+  
+  colorMode(RGB,255,255,255,1);
+  ellipseMode(RADIUS);
+  background(179,84,255);
+
+
+//channel selection(rectangular button)
+fill(177,154,252);
+  if((mx>(50))&&(mx<(125))&&(my>(325))&&(my<(381))&&(mouseIsPressed)){
+   fill(252,167,168);
+    for(c=42;c<300;c+=20){rect(42,c,100,16)}
+        fill(241,143,255);
+}
+rect(50,325,75,56);
+  
+//Division line on screen
+strokeWeight(4);stroke(255,43,173);
+    line(0,300,600,300);  
+
+
+//TV rim
+noStroke();fill(125);  
+  rect(0,0,40,400);
+  rect(0,0,600,40);
+  rect(560,0,40,400);
+
+
+  //TV text
+noStroke(); fill(0,0,0);
+  rect(210,160,30,120);
+  rect(188,155,75,27);
+  quad(265,205,385,205,373,280,277,280);
+
+
+stroke(0,0,0);strokeWeight(10);  
+  line(280,160,325,205);
+  line(325,205,370,160);
+
+
+//buttons
+strokeWeight(1.5);stroke(0,0,0);fill(255,255,255);
+
+
+//small row of rectanglular buttons(volume)
+if((mx>(323.5))&&(mx<(556.5))&&(my>(340))&&(my<(370))){
+ strokeWeight(3); stroke(255,255,255);
+} 
+
+
+//max volume
+  
+fill(255,255,255);
+  if((mx>(325))&&(mx<(355))&&(my>(340))&&(my<(370))&&((keyIsPressed==true))&&( key=='5')){
+   fill(229,28,255);
+}
+    rect(325,340,30,30);
+
+
+//almost max volume
+
+
+  if((mx>(375))&&(mx<(405))&&(my>(340))&&(my<(370))&&((keyIsPressed==true))&&( key=='4')){
+    fill(229,28,255);
+} 
+    rect(375,340,30,30);
+ 
+//middle volume
+   
+  if((mx>(425))&&(mx<(455))&&(my>(340))&&(my<(370))&&((keyIsPressed==true))&&( key=='3')){
+    fill(229,28,255);
+} 
+    rect(425,340,30,30);
+
+
+//almost middle volume
+
+
+  if((mx>(475))&&(mx<(505))&&(my>(340))&&(my<(370))&&((keyIsPressed==true))&&( key=='2')){
+    fill(229,28,255);
+} 
+    rect(475,340,30,30);
+
+
+//low volume
+
+
+  if((mx>(525))&&(mx<(555))&&(my>(340))&&(my<(370))&&((keyIsPressed==true))&&( key=='1')){
+    fill(229,28,255);
+}
+    rect(525,340,30,30);
+
+
+
+
+//powerbutton
+strokeWeight(1.5);fill(0,255,0);stroke(0,0,0)
+
+
+var  x=572;
+var  y=30;
+var radius=15;
+var d=dist(mx,my,x,y);
+
+
+if((d<radius)&&(mouseIsPressed)){
+           fill(15); rect(40,40,520,400); 
+  //TV rim
+noStroke();fill(125);  
+  rect(0,0,40,400);
+  rect(0,0,600,40);
+  rect(560,0,40,400); 
+  fill(255,0,0) }
+  
+  ellipse(578,25,12,12);
+
+
+
+
+}
