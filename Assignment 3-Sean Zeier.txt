@@ -1,0 +1,41 @@
+﻿function setup() {
+  createCanvas(500,500);
+background(0);
+  frameRate(30);
+}
+
+
+function draw() {
+ let x=frameCount;
+  let mx=mouseX;
+  let my=mouseY;
+  let x1=0;
+  let y1=500;
+  let x2=mx;
+  let y2=my
+  let px=pmouseX;
+  let py=pmouseY;
+  let d=dist(x1,y1,x2,y2);
+  colorMode(RGB,255,255,255,1);
+
+
+fill(px,py-100,my);
+  if (mouseIsPressed===true){ 
+    fill(mx-100,my,my-50)};
+stroke(0,0,0); 
+        
+    rect(x,my,mx);
+
+
+  dist(0,499,x,x);
+
+
+noFill();stroke(255,255,0,0.2);
+
+
+    line(250,250,mx,my)
+  
+fill(0);stroke(255,130,0,1); 
+  
+  text(d,20,480);
+}
